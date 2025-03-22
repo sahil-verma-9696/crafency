@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>JavaScript Roadmap Tree</title>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"
+    ></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #mynetwork {
+        width: 100vw;
+        height: 100vh;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mynetwork"></div>
+
+    <script>
+      function createNode(id, label, color, url, image) {
+        return {
+          id,
+          label,
+          shape: "image", // This ensures full logos
+          image,
+          color: { background: color, border: "white" },
+          font: { color: "white", size: 14 },
+          url,
+        };
+      }
+
+      var nodes = new vis.DataSet([
+        { id: 1, label: "🌟 JavaScript Roadmap", shape: "box", color: "#ff5733", font: { color: "white", size: 16, bold: true } },
+
+        // Fundamentals
+        createNode(2, "JS Basics", "#3498db", "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Introduction", "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"),
+        createNode(3, "DOM & Events", "#3498db", "https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model", "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"),
+        createNode(4, "ES6+ Features", "#3498db", "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let", "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"),
+
+        // Frontend
+        createNode(5, "Frontend", "#2ecc71", "https://developer.mozilla.org/en-US/docs/Learn/Front-end_web_developer", "https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg"),
+        createNode(6, "React.js", "#2ecc71", "https://react.dev/", "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"),
+        createNode(7, "Vue.js", "#2ecc71", "https://vuejs.org/", "https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg"),
+
+        // Backend
+        createNode(8, "Backend", "#f1c40f", "https://nodejs.org/en/", "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg"),
+        createNode(9, "Databases", "#f1c40f", "https://www.mongodb.com/docs/manual/introduction/", "https://upload.wikimedia.org/wikipedia/en/4/45/MongoDB-Logo.svg"),
+
+        // Advanced Topics
+        createNode(10, "Advanced Topics", "#9b59b6", "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API", "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"),
+        createNode(11, "Security", "#9b59b6", "https://jwt.io/introduction/", "https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"),
+      ]);
+
+      var edges = new vis.DataSet([
+        { from: 1, to: 2 }, { from: 1, to: 3 }, { from: 1, to: 4 }, // JS Fundamentals
+        { from: 4, to: 5 }, { from: 5, to: 6 }, { from: 5, to: 7 }, // Frontend
+        { from: 4, to: 8 }, { from: 8, to: 9 }, // Backend
+        { from: 4, to: 10 }, { from: 10, to: 11 }, // Advanced
+      ]);
+
+      var container = document.getElementById("mynetwork");
+      var data = { nodes: nodes, edges: edges };
+
+      var options = {
+        layout: {
+          hierarchical: {
+            enabled: true,
+            direction: "UD", // Top to Bottom
+            sortMethod: "directed",
+          },
+        },
+        interaction: { dragNodes: true },
+        physics: { enabled: true },
+      };
+
+      var network = new vis.Network(container, data, options);
+
+      // Click event to open URLs
+      network.on("click", function (params) {
+        if (params.nodes.length > 0) {
+          var nodeId = params.nodes[0];
+          var node = nodes.get(nodeId);
+          if (node.url) {
+            window.open(node.url, "_blank");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
