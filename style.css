@@ -50,31 +50,32 @@ main .bg-video {
   width: 100%;
   height: 120vh;
   overflow: hidden;
+  position: relative;
 }
 main .bg-video video {
   height: 100%;
 }
-main .preview-text {
+main .bg-video .preview-text {
   position: absolute;
   top: 30%;
   transform: translateY(-50%);
 }
-main .preview-text .heading {
+main .bg-video .preview-text .heading {
   text-transform: capitalize;
   font-weight: 600;
   font-size: 2.2rem;
   text-align: center;
 }
-main .preview-text .heading span {
+main .bg-video .preview-text .heading span {
   opacity: 0.5;
 }
-main .preview-text .sub-heading {
+main .bg-video .preview-text .sub-heading {
   opacity: 0.5;
   text-align: center;
   font-size: 0.9rem;
   padding: 1.5rem 0;
 }
-main .preview-text .ctas div {
+main .bg-video .preview-text .ctas div {
   width: -moz-fit-content;
   width: fit-content;
   padding: 0.5rem 1.5rem;
@@ -83,21 +84,21 @@ main .preview-text .ctas div {
   position: relative;
   border: 1px solid white;
 }
-main .preview-text .ctas div:nth-child(1) {
+main .bg-video .preview-text .ctas div:nth-child(1) {
   margin-bottom: 1.5rem;
   background-color: white;
   color: black;
 }
-main .preview-text .ctas div:nth-child(1) a {
+main .bg-video .preview-text .ctas div:nth-child(1) a {
   color: black;
 }
-main .preview-text .ctas div a {
+main .bg-video .preview-text .ctas div a {
   text-decoration: none;
   font-weight: bold;
   text-transform: capitalize;
   font-size: 1.1rem;
 }
-main .preview-text .ctas div span {
+main .bg-video .preview-text .ctas div span {
   background-color: white;
   color: black;
   position: absolute;
@@ -113,8 +114,10 @@ main .preview-text .ctas div span {
   border-radius: 50%;
   border: 1px solid black;
 }
-main .marquees {
+main .bg-video .marquees {
   width: 90%;
+  height: -moz-fit-content;
+  height: fit-content;
   padding: 2rem 0;
   margin: auto;
   border-radius: 1rem;
@@ -123,28 +126,28 @@ main .marquees {
   flex-direction: column;
   gap: 2rem;
   position: absolute;
-  bottom: 0;
+  top: 100%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -100%);
   overflow: hidden;
   background-image: url("./Crafency/marquee-bg.webp");
   background-position: center;
   background-size: cover;
 }
-main .marquees .preview-image-wrap {
+main .bg-video .marquees .preview-image-wrap {
   top: 2rem;
   display: flex;
 }
-main .marquees .preview-image-wrap ul {
+main .bg-video .marquees .preview-image-wrap ul {
   display: flex;
   transform: translateX(-100%);
   animation: marquee-right 20s linear infinite;
 }
-main .marquees .preview-image-wrap ul img {
+main .bg-video .marquees .preview-image-wrap ul img {
   height: 8rem;
   padding-left: 1rem;
 }
-main .marquees .preview-image-wrap:last-child ul {
+main .bg-video .marquees .preview-image-wrap:last-child ul {
   transform: translateX(0%);
   animation: marquee-left 20s linear infinite;
 }
@@ -228,39 +231,40 @@ main .marquees .preview-image-wrap:last-child ul {
     width: 100%;
     height: 180vh;
     overflow: hidden;
+    position: relative;
   }
   main .bg-video video {
     height: 100%;
   }
-  main .preview-text {
+  main .bg-video .preview-text {
     position: absolute;
-    top: 25%;
+    top: 40%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -100%);
   }
-  main .preview-text .heading {
+  main .bg-video .preview-text .heading {
     text-transform: capitalize;
     font-weight: 600;
     font-size: 4.2rem;
     text-align: center;
   }
-  main .preview-text .heading span {
+  main .bg-video .preview-text .heading span {
     opacity: 0.5;
   }
-  main .preview-text .sub-heading {
+  main .bg-video .preview-text .sub-heading {
     opacity: 0.5;
     text-align: center;
     font-size: 1.2rem;
     padding: 2.5rem 0;
   }
-  main .preview-text .ctas {
+  main .bg-video .preview-text .ctas {
     display: flex;
     gap: 1.5rem;
     width: -moz-fit-content;
     width: fit-content;
     margin: auto;
   }
-  main .preview-text .ctas div {
+  main .bg-video .preview-text .ctas div {
     width: -moz-fit-content;
     width: fit-content;
     padding: 0.5rem 2.5rem;
@@ -269,21 +273,21 @@ main .marquees .preview-image-wrap:last-child ul {
     position: relative;
     border: 1px solid white;
   }
-  main .preview-text .ctas div:nth-child(1) {
+  main .bg-video .preview-text .ctas div:nth-child(1) {
     margin-bottom: 0;
     background-color: white;
     color: black;
   }
-  main .preview-text .ctas div:nth-child(1) a {
+  main .bg-video .preview-text .ctas div:nth-child(1) a {
     color: black;
   }
-  main .preview-text .ctas div a {
+  main .bg-video .preview-text .ctas div a {
     text-decoration: none;
     font-weight: bold;
     text-transform: capitalize;
     font-size: 1.1rem;
   }
-  main .preview-text .ctas div span {
+  main .bg-video .preview-text .ctas div span {
     background-color: white;
     color: black;
     position: absolute;
@@ -299,7 +303,7 @@ main .marquees .preview-image-wrap:last-child ul {
     border-radius: 50%;
     border: 1px solid black;
   }
-  main .marquees {
+  main .bg-video .marquees {
     width: 90%;
     padding: 5rem 0;
     margin: auto;
@@ -309,28 +313,28 @@ main .marquees .preview-image-wrap:last-child ul {
     flex-direction: column;
     gap: 2rem;
     position: absolute;
-    bottom: 0;
+    top: 100%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, -100%);
     overflow: hidden;
     background-image: url("./Crafency/marquee-bg.webp");
     background-position: center;
     background-size: cover;
   }
-  main .marquees .preview-image-wrap {
+  main .bg-video .marquees .preview-image-wrap {
     top: 2rem;
     display: flex;
   }
-  main .marquees .preview-image-wrap ul {
+  main .bg-video .marquees .preview-image-wrap ul {
     display: flex;
     transform: translateX(-100%);
     animation: marquee-right 20s linear infinite;
   }
-  main .marquees .preview-image-wrap ul img {
+  main .bg-video .marquees .preview-image-wrap ul img {
     height: 20rem;
     padding-left: 1rem;
   }
-  main .marquees .preview-image-wrap:last-child ul {
+  main .bg-video .marquees .preview-image-wrap:last-child ul {
     transform: translateX(0%);
     animation: marquee-left 20s linear infinite;
   }
