@@ -166,6 +166,8 @@ main {
   }
 
   .demo {
+  .inner-page {
+
     margin: 1rem 0;
     p {
       text-align: center;
@@ -174,6 +176,7 @@ main {
       text-align: center;
       font-size: 2rem;
     }
+
     .image-container {
       .img-wrapper {
         width: 95%;
@@ -190,6 +193,21 @@ main {
         h2{
           padding-bottom: 1rem;
         }
+
+    .img-wrapper {
+      width: 95%;
+      margin: 1rem auto;
+      border-radius: 1rem;
+      background-color: red;
+      img {
+        display: block;
+        width: 95%;
+        margin: auto;
+        padding: 1rem 0;
+        border-radius: 1rem;
+      }
+      h2 {
+        padding-bottom: 1rem;
       }
     }
   }
