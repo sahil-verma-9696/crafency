@@ -151,6 +151,32 @@ main .bg-video .marquees .preview-image-wrap:last-child ul {
   transform: translateX(0%);
   animation: marquee-left 20s linear infinite;
 }
+main .inner-page {
+  margin: 1rem 0;
+}
+main .inner-page p {
+  text-align: center;
+}
+main .inner-page h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+main .inner-page .img-wrapper {
+  width: 95%;
+  margin: 1rem auto;
+  border-radius: 1rem;
+  background-color: red;
+}
+main .inner-page .img-wrapper img {
+  display: block;
+  width: 95%;
+  margin: auto;
+  padding: 1rem 0;
+  border-radius: 1rem;
+}
+main .inner-page .img-wrapper h2 {
+  padding-bottom: 1rem;
+}
 
 @media (min-width: 1024px) {
   main {
